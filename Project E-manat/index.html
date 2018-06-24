@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>E-manat</title>
     <link rel="stylesheet" href="css/style.css">
+   
 </head>
+
 <body>
+    <script src="js/config/aze.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/moment.js"></script>
+    <script>
+        moment.updateLocale('az', {
+            months: ["Yanvar", "Fevral", "Mart", "Aprel", "May", "Iyun", "Iyul", "Avqust", "Sentyabr", "Oktyabr", "Noyabr", "Dekabr"],
+            weekdays: ["bazar", "bazarertəsi", "çərşəmbə axşamı", "çərşəmbə", "cümə axşamı", "cümə", "şənbə"]
+        });
+        $(".pTime")[0].innerText = moment().format("h:mm:ss Do MMMM dddd");
+        for(let i = 0; i<config.length;i++){
+           $(".flexsText")[i].innerText=config[i].text;
+        }
+    </script>
 </body>
+
 </html>
